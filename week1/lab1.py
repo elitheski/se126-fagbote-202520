@@ -22,7 +22,7 @@ to enter and check as many rooms as they would like without exiting the program.
 #max        - stores the maximum number of people allowed to enter the meeting
 #allow      - stores the answer of the function difference
 #answer     - used to conintue the loop
-#abs_x      - used to do the aboslue value so eveyr number returned to allow is positive 
+#abs_x      - used to do the aboslue value so eveyr number returned to allow is positive
 
 def difference(people,max_cap):
     
