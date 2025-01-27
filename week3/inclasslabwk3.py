@@ -59,16 +59,16 @@ with open("text_files/filehandling.csv") as csvfile:
            disk2 = rec[6]
            os = rec[7]
            yr = rec[8]
-    #using the names of the files to connect them to the newly made lists so that it knows which column to add data from
+        #using the names of the files to connect them to the newly made lists so that it knows which column to add data from
 
-for rec in file:
-    type_list.append(type)
-    brand_list.append(brand)
-    cpu_list.append(cpu)
-    ram_list.append(ram)
-    disk1_list.append(disk1)
-    hdd_list.append(hdd)
-    disk2_list.append(disk2)
+        #for rec in file:
+        type_list.append(type)
+        brand_list.append(brand)
+        cpu_list.append(cpu)
+        ram_list.append(ram)
+        disk1_list.append(disk1)
+        hdd_list.append(hdd)
+        disk2_list.append(disk2)
      
 
 print(f"{'Type':10}  {'Brand':10}  {'CPU':5}  {'RAM':5}  {'1st D':5}  {'# HDD':5}  {'2nd D':5}  {'OS':5} {'YR':5}")
