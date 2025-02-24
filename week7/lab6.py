@@ -37,17 +37,91 @@ def map():
     for i in range(len(seatsA)):
         print(f"{i+1}  {seatsA[i]}\t{seatsB[i]}\t\t{seatsC[i]}\t{seatsD[i]}")
 
+def choice():
+    #promtps the user is they want to continue selecting seats
+    ans = input("Would you like to continue seletcing seats? [y/n]").lower()
+    while ans !="y" and ans != "n":
+        print("***INVALID ENTRY***")
+        ans = input("Would you like to continue seletcing seats? [y/n]: ").lower()
+
+    return ans
+
+
 seatsA = ['A','A','A','A','A','A','A']
 seatsB = ['B','B','B','B','B','B','B']
 seatsC = ['C','C','C','C','C','C','C']
 seatsD = ['D','D','D','D','D','D','D']
 
 
-print ("Weclome to the air plan seating program!")
+print ("Weclome to the air plan seating program!\n")
+
+ans = input("Would you like to choose your seat? [y/n]").lower()
+while ans !="n" and ans!="y":
+    print("***INVALID ENTRY****")
+    ans = input("Would you like to choose your seat? [y/n]").lower()
+
+while ans == "y":
+    #displays the seats for user
+    print("These are the seats availible\n")
+    print("Row")
+    map()
+    #input from user
+    row = int(input("What row could you like to select [1-7]: "))
+    seat = input("What seat do you want to choose [A/B/C/D]:  ")
+
+    #manipluating the data
+
+    if seat.upper() == "A":
+        #this makes it so if the seats are not taken it appends (or adds)/updates the list
+
+        if seatsA[row - 1] != "X":
+            seatsA[row -1] = "X"
+            print("Here is the updated seat chart:\n")
+            print("Row")
+            for i in range(len(seatsA)):
+                print(f"{i + 1} {seatsA[i]}\t{seatsB[i]}\t\t{seatsC[i]}\t{seatsD[i]}")
+            ans = choice()   
+        else:
+            print(f"Sorry, seat {row}{seat} is taken")
+            ans = choice() 
+            
+    
+    elif seat.upper() == "B":
+        if seatsB[row-1] != "X":
+            seatsB[row -1] = "X"
+            print("Here is the updated seat chart:\n")
+            print("Row")
+            for i in range(len(seatsA)):
+                print(f"{i + 1} {seatsA[i]}\t{seatsB[i]}\t\t{seatsC[i]}\t{seatsD[i]}")
+            ans = choice()     
+        else:
+            print(f"Sorry, seat {row}{seat} is taken")
+            ans = choice() 
+
+    elif seat.upper() == "C":
+        if seatsC[row-1] != "X":
+            seatsC[row -1] = "X"
+            print("Here is the updated seat chart:\n")
+            print("Row")
+            for i in range(len(seatsA)):
+                print(f"{i + 1} {seatsA[i]}\t{seatsB[i]}\t\t{seatsC[i]}\t{seatsD[i]}")
+            ans = choice()     
+        else:
+            print(f"Sorry, seat {row}{seat} is taken")
+            ans = choice() 
+
+    elif seat.upper() == "D":
+        if seatsD[row - 1] != "X":
+            seatsD[row -1] = "X"
+            print("Here is the updated seat chart:\n")
+            print("Row")
+            for i in range(len(seatsA)):
+                print(f"{i + 1} {seatsA[i]}\t{seatsB[i]}\t\t{seatsC[i]}\t{seatsD[i]}")
+            ans = choice()            
+        else:
+            print(f"Sorry, seat {row}{seat} is taken")
+            ans = choice() 
 
 
-map()
 
-seatsD[row - 1] = "X"
-print("-------------------------------------------")
-map()
+print("Thank you for using my program :D")   
